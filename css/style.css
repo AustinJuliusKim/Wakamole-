@@ -1,0 +1,20 @@
+.container {
+	border: 5px solid black;
+	height: 310px;
+	width: 310px;
+	background-color: white;
+}
+
+.hole {
+	border: 1px solid black;
+	width: 98px;
+	height: 98px;
+	display: inline-block;
+	vertical-align: center
+	
+}
+
+img {
+	max-width: 98px;
+	max-height: 98px;
+}
