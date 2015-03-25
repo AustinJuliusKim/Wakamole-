@@ -1,10 +1,27 @@
-var holes = document.querySelectorAll(".hole")
+var holes = document.querySelectorAll(".hole");
+var moleCounter = 0;
+var score = document.getElementsByTagName("h1")[0];
 
-var randomHole = function() {
-	holes[Math.floor(Math.random() * (holes.length))].innerHTML = "<img src = tobi.gif>";
+function randomNumber() {
+	var result = Math.floor(Math.random() * (holes.length));
+	console.log(result);
+	return result; 
 }
-// will randomly pick a hole and place tobi inside
 
-if (holes[Math.floor(Math.random() * (holes.length))].innerHTML === "<img src = tobi.gif>") {
-	randomHole();
-}
+
+
+for (var i = 0; i<holes.length; i++) {
+	holes[i].addEventListener("click", function() {
+		if (this.innerHTML !== "") {
+			this.innerHTML = "";
+			moleCounter++;	
+			score.innerText = moleCounter;
+			holes[randomNumber()].innerHTML = "<img src = tobi.gif>";
+		}
+		})
+	}
+
+holes[randomNumber()].innerHTML = "<img src = tobi.gif>";
+
+
+
